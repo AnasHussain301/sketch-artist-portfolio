@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #16140f;
+  color: #eae4d6;
+}
+
+/* Faint drafting-paper grid, used behind sections that want the "studio desk" feel */
+.grid-paper {
+  background-image:
+    linear-gradient(rgba(234, 228, 214, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(234, 228, 214, 0.05) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+/* Torn-paper edge used on gallery cards, drawn as a jagged clip-path */
+.torn-edge {
+  clip-path: polygon(
+    0% 2%, 3% 0%, 8% 1.5%, 14% 0%, 20% 1%, 27% 0%, 33% 1.5%, 40% 0%,
+    47% 1%, 54% 0%, 61% 1.5%, 68% 0%, 75% 1%, 82% 0%, 89% 1.5%, 96% 0%, 100% 2%,
+    100% 98%, 97% 100%, 91% 98.5%, 85% 100%, 79% 99%, 72% 100%, 65% 98.5%, 58% 100%,
+    51% 99%, 44% 100%, 37% 98.5%, 30% 100%, 23% 99%, 16% 100%, 9% 98.5%, 2% 100%, 0% 98%
+  );
+}
+
+::selection {
+  background: #b34a32;
+  color: #f5f1e6;
+}
+
+/* Respect reduced-motion preferences globally */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
