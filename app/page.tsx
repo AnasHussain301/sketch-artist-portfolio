@@ -58,10 +58,10 @@ function DrawnEye() {
         <motion.circle
           r="3.5"
           fill="#B34A32"
-          initial={{ offsetDistance: "0%", opacity: 0 }}
-          animate={{ offsetDistance: "100%", opacity: [0, 1, 1, 0] }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: [0, 1, 1, 0] }}
           transition={{ duration: 1, delay: 0.1, ease: "easeInOut" }}
-          style={{ offsetPath: `path("M45,68 Q150,20 255,65")`, offsetRotate: "0deg" } as React.CSSProperties}
+          style={{ offsetPath: `path("M45,68 Q150,20 255,65")`, offsetDistance: "50%", offsetRotate: "0deg" } as React.CSSProperties}
         />
 
         <motion.path
@@ -645,3 +645,4 @@ export default function ArtistPortfolio() {
     </div>
   );
 }
+
